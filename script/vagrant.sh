@@ -50,7 +50,7 @@ echo -e "
                              |_|    |___/
 
 ################################################
-Vagrant Box.......: ammonkc/entropy ${BOX_VERSION}
+Vagrant Box.......: ammonkc/entropy @@BOX_VERSION@@
 hostname..........: `hostname`
 IP Address........: `/sbin/ifconfig eth1 | grep 'inet addr' | awk -F: '{print $2}' | awk '{print $1}'`
 OS Release........: `cat /etc/redhat-release`
@@ -65,4 +65,5 @@ Configured Sites..:
 "
 EOF
 
+sed -i "s/@@BOX_VERSION@@/${BOX_VERSION}/g" /etc/profile.d/motd.sh
 chmod +x /etc/profile.d/motd.sh

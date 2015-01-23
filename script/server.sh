@@ -120,7 +120,7 @@ chkconfig memcached --add
 chkconfig memcached on --levels 235
 service memcached start
 
-echo ">>> Installing redis"
+echo "==> Installing redis"
 yum --enablerepo=remi,remi-php56 -y install redis php-redis
 chkconfig --add redis
 chkconfig --level 345 redis on
