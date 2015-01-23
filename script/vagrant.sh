@@ -56,10 +56,11 @@ IP Address........: `/sbin/ifconfig eth1 | grep 'inet addr' | awk -F: '{print $2
 OS Release........: `cat /etc/redhat-release`
 kernel............: `uname -r`
 User..............: `whoami`
-Apache............: `httpd -v | grep version`
-PHP...............: `php -v | grep cli`
+Apache............: `httpd -v | grep 'Server version' | awk '{print $3}' | tr -d Apache/`
+PHP...............: `php -v | grep cli | awk '{print $2}'`
+MySQL.............: `mysql -V | awk '{print $5}' | tr -d ,`
+PostgreSQL........: `psql --version | awk '{print $3}'`
 Configured Sites..:
-
 `cat /etc/hosts.dnsmasq`
 ################################################
 "
