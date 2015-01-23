@@ -50,7 +50,7 @@ echo -e "
                              |_|    |___/
 
 ################################################
-Vagrant Box.......: ammonkc/entropy 2.0.4
+Vagrant Box.......: ammonkc/entropy 2.1.0
 hostname..........: `hostname`
 IP Address........: `/sbin/ifconfig eth1 | grep 'inet addr' | awk -F: '{print $2}' | awk '{print $1}'`
 OS Release........: `cat /etc/redhat-release`
